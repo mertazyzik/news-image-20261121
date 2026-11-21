@@ -4,20 +4,17 @@
 [![rank](https://make.fun/badge/news-image-20261121/mertazyzik/news-image-20261121/rank.svg)](https://make.fun/bounty/news-image-20261121/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
 [![reward](https://make.fun/badge/news-image-20261121/mertazyzik/news-image-20261121/reward.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
 
-A one-page newspaper front page that sums up Saturday 21 November 2026's world news in a single image: the Russian missile that crashed in Poland as Ukraine's allies drilled nearby, Russia's biggest barrage on Kyiv's bridges, the Wall Street correction, GTA 6's $3.79bn first day, Denmark's expulsion of Russia's defence attaché, and the UK-EU post-Brexit reset deal — plus COP31, the Zecler verdict, South Africa's local elections and the Rikers Island plan. Every fact was checked against reporting of 20–21 November 2026 (BBC, The Guardian, Al Jazeera, Reuters, CNN, UN News, The Times, WSJ).
+One newspaper front page that sums up Saturday 21 November 2026 in a single image. The lead story is the Russian missile that crashed in Poland while Ukraine's allies were drilling nearby; the rest of the page covers Russia's biggest barrage on Kyiv's bridges, the Wall Street correction, GTA 6's $3.79bn first day, Denmark expelling Russia's defence attaché over an alleged assassination plot, and the UK-EU post-Brexit reset deal. The strip at the bottom adds COP31 running into overtime, the Zecler verdict in Paris, South Africa's local elections and the plan to close Rikers Island.
 
-The image is drawn deterministically by `draw.py` (Python + Pillow, no network, fixed fonts) and copied to the output directory by `main.ts` (Node 22, standard library only).
+Every fact was checked against reporting of 20–21 November 2026 from the BBC, The Guardian, Al Jazeera, Reuters, CNN, UN News, The Times and the Wall Street Journal.
 
-## Run it
+## How it is made
+
+`draw.py` renders `entry.png` (1024×1024) with Pillow: fixed Liberation fonts, no network, no randomness — running it twice gives the same file. `main.ts` (Node 22, standard library only) copies the finished image to the grader's output directory.
 
 ```sh
+python3 draw.py            # redraw entry.png from scratch
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
-```
-
-To redraw the image from scratch:
-
-```sh
-python3 draw.py
 ```
 
 ---
